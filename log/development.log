@@ -1,0 +1,582 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /usr/bin/rake:23
+  [1m[35m (34.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /usr/bin/rake:23
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /usr/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/bin/rake:23
+Migrating to DeviseCreateUsers (20180724173953)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/bin/rake:23
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180724173953_devise_create_users.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20180724173953_devise_create_users.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20180724173953_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180724173953"]]
+  ↳ /usr/bin/rake:23
+  [1m[35m (50.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-07-24 17:40:07.596715"], ["updated_at", "2018-07-24 17:40:07.596715"]]
+  ↳ /usr/bin/rake:23
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/bin/rake:23
+Migrating to CreateRecords (20180724174203)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180724174203_create_records.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Customer" varchar, "Phone" integer, "Time" datetime, "Description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180724174203_create_records.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180724174203"]]
+  ↳ /usr/bin/rake:23
+  [1m[35m (24.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/bin/rake:23
+Migrating to AddUserIdToRecords (20180724175737)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/bin/rake:23
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "records" ADD "user_id" integer[0m
+  ↳ db/migrate/20180724175737_add_user_id_to_records.rb:3
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180724175737_add_user_id_to_records.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_records_on_user_id" ON "records" ("user_id")[0m
+  ↳ db/migrate/20180724175737_add_user_id_to_records.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180724175737"]]
+  ↳ /usr/bin/rake:23
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/bin/rake:23
+Started GET "/" for 127.0.0.1 at 2018-07-24 21:10:36 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (2.0ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:13
+  Rendered records/index.html.erb within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 597ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "gem 'devise'": expected "{", was ""):
+    4:     <title>Call Center DB</title>
+    5:     <%= csrf_meta_tags %>
+    6:  
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10:  
+  
+app/assets/stylesheets/application.scss:19
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1992897041844716066_69998073139060'
+Started GET "/" for 127.0.0.1 at 2018-07-24 21:14:46 +0300
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:13
+  Rendered records/index.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "gem 'devise'": expected "{", was ""):
+    4:     <title>Call Center DB</title>
+    5:     <%= csrf_meta_tags %>
+    6:  
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10:  
+  
+app/assets/stylesheets/application.scss:19
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1992897041844716066_69998046025320'
+Started GET "/" for 127.0.0.1 at 2018-07-24 21:16:11 +0300
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:13
+  Rendered records/index.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "gem 'devise'": expected "{", was ""):
+    4:     <title>Call Center DB</title>
+    5:     <%= csrf_meta_tags %>
+    6:  
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10:  
+  
+app/assets/stylesheets/application.scss:19
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1992897041844716066_69998048240720'
+Started GET "/" for 127.0.0.1 at 2018-07-24 21:17:49 +0300
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:13
+  Rendered records/index.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+Completed 200 OK in 9281ms (Views: 9280.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/records/new" for 127.0.0.1 at 2018-07-24 21:18:19 +0300
+Processing by RecordsController#new as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-24 21:18:19 +0300
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:13
+  Rendered records/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 67ms (Views: 65.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-07-24 21:18:23 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering /usr/share/gems/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (5.6ms)
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application (568.7ms)
+  Rendered layouts/_navigation.html.erb (2.8ms)
+Completed 200 OK in 665ms (Views: 624.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-07-24 21:18:37 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Ty677StbdEuSQkuD3uIkm0ZY/4VVBv6cAodWJdVUopdnTM4F+KKu7Q7qAS4Ge/JTXcUOz4W7Ef2VGWU4B4ECw==", "user"=>{"email"=>"ddd@f", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Ty677StbdEuSQkuD3uIkm0ZY/4VVBv6cAodWJdVUopdnTM4F+KKu7Q7qAS4Ge/JTXcUOz4W7Ef2VGWU4B4ECw==", "user"=>{"email"=>"ddd@f", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /usr/share/gems/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (0.6ms)
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_navigation.html.erb (3.4ms)
+Completed 200 OK in 58ms (Views: 57.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-07-24 21:18:42 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZPuGIDN18j1vMhJzZALMehtPRw17TtikVZ6+/bd7hvhcZyk6ki1cKUYykKyF2eeC2hLyHQQW0gMeaKDJm35bEQ==", "user"=>{"email"=>"ddd@f", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (16.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ddd@f"], ["LIMIT", 1]]
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 102ms (ActiveRecord: 16.4ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZPuGIDN18j1vMhJzZALMehtPRw17TtikVZ6+/bd7hvhcZyk6ki1cKUYykKyF2eeC2hLyHQQW0gMeaKDJm35bEQ==", "user"=>{"email"=>"ddd@f", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /usr/share/gems/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+Completed 200 OK in 378ms (Views: 65.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-07-24 21:18:46 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /usr/share/gems/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (1.8ms)
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_navigation.html.erb (2.3ms)
+Completed 200 OK in 80ms (Views: 79.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-07-24 21:19:05 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q/TkW6PQllBCdKGESwiooR58/d1whP5PArjW3gtPokF9POnwlKPnGZuGb1idPx21TiKJu86F7/Cifoo3BoyCxw==", "user"=>{"email"=>"rybalkinasvet@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rybalkinasvet@gmail.com"], ["LIMIT", 1]]
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (68.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "rybalkinasvet@gmail.com"], ["encrypted_password", "$2a$11$MeJD4xkJguLY5oytiFIHjOfliOc181//73K7jjJIUZkSRqU9w6Wty"], ["created_at", "2018-07-24 18:19:05.929690"], ["updated_at", "2018-07-24 18:19:05.929690"]]
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (26.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-07-24 18:19:06.028220"], ["last_sign_in_at", "2018-07-24 18:19:06.028220"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2018-07-24 18:19:06.028965"], ["id", 1]]
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 359ms (ActiveRecord: 102.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-24 21:19:06 +0300
+Processing by RecordsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:8
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:13
+  Rendered records/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+Completed 200 OK in 147ms (Views: 107.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/records/new" for 127.0.0.1 at 2018-07-24 21:19:18 +0300
+Processing by RecordsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:19
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/_form.html.erb (464.1ms)
+  Rendered records/new.html.erb within layouts/application (487.8ms)
+Completed 500 Internal Server Error in 507ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x00007f53619ae460>:0x00007f5364b84610>
+Did you mean?  fork):
+    12:   <% end %>
+    13: 
+    14:   <div class="field">
+    15:     <%= form.label :Customer %>
+    16:     <%= form.text_field :Customer %>
+    17:   </div>
+    18: 
+  
+app/views/records/_form.html.erb:15:in `block in _app_views_records__form_html_erb___1598486593819000838_69998074390800'
+app/views/records/_form.html.erb:1:in `_app_views_records__form_html_erb___1598486593819000838_69998074390800'
+app/views/records/new.html.erb:3:in `_app_views_records_new_html_erb__1165472574682226383_69998074406900'
+Started GET "/records/new" for 127.0.0.1 at 2018-07-24 21:22:38 +0300
+Processing by RecordsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:19
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/_form.html.erb (166.2ms)
+  Rendered records/new.html.erb within layouts/application (173.0ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+Completed 200 OK in 438ms (Views: 434.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/records" for 127.0.0.1 at 2018-07-24 21:24:29 +0300
+Processing by RecordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vbrRpu42SExu24Mfp7RttLWeFIswUJ9oQhf85i4k/fWFJn68T27mWEfbAcBGb0ZMdMOhm08Ilc8J4eLSAiEgHA==", "record"=>{"Customer"=>"Jury Ivanov", "Phone"=>"79511113452", "Time(1i)"=>"2018", "Time(2i)"=>"7", "Time(3i)"=>"24", "Time(4i)"=>"18", "Time(5i)"=>"22", "Description"=>"Was wondering about discount"}, "commit"=>"Create Record"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:34
+  [1m[36mRecord Create (8.6ms)[0m  [1m[32mINSERT INTO "records" ("Customer", "Phone", "Time", "Description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["Customer", "Jury Ivanov"], ["Phone", 79511113452], ["Time", "2018-07-24 18:22:00"], ["Description", "Was wondering about discount"], ["created_at", "2018-07-24 18:24:29.942509"], ["updated_at", "2018-07-24 18:24:29.942509"], ["user_id", 1]]
+  ↳ app/controllers/records_controller.rb:34
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:34
+Redirected to http://localhost:3000/records/1
+Completed 302 Found in 127ms (ActiveRecord: 16.4ms)
+
+
+Started GET "/records/1" for 127.0.0.1 at 2018-07-24 21:24:29 +0300
+Processing by RecordsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecord Load (20.9ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:71
+  Rendering records/show.html.erb within layouts/application
+  Rendered records/show.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navigation.html.erb:11
+  Rendered layouts/_navigation.html.erb (5.6ms)
+Completed 200 OK in 103ms (Views: 69.2ms | ActiveRecord: 22.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-24 21:24:35 +0300
+Processing by RecordsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:8
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:13
+  Rendered records/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 58ms (Views: 50.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-07-24 21:24:49 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pax3vWdjREVYs0A1Zpt7cLjAwx7Q15e/2orvHBrODqydMNinxjvqUXGzwuqHQFCIeZ12Dq+PnRiRfPEoNsvTRQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 156ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-24 21:24:49 +0300
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:13
+  Rendered records/index.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+Completed 200 OK in 64ms (Views: 62.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-07-24 21:24:55 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering /usr/share/gems/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (2.2ms)
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+Completed 200 OK in 133ms (Views: 131.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-07-24 21:25:07 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ssugfXq5HuUYzCs20a3sVMjZdOoEmULaP3W9+4dgYa993FZSTJ4w4uYMeHopAyBd9Q5KvWHRQz2jgU3+rGj+ig==", "user"=>{"email"=>"r@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ssugfXq5HuUYzCs20a3sVMjZdOoEmULaP3W9+4dgYa993FZSTJ4w4uYMeHopAyBd9Q5KvWHRQz2jgU3+rGj+ig==", "user"=>{"email"=>"r@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /usr/share/gems/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (2.3ms)
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+Completed 200 OK in 62ms (Views: 61.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-07-24 21:25:10 +0300
+Processing by Devise::PasswordsController#new as HTML
+  Rendering /usr/share/gems/gems/devise-4.4.3/app/views/devise/passwords/new.html.erb within layouts/application
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (3.1ms)
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/passwords/new.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+Completed 200 OK in 70ms (Views: 67.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for 127.0.0.1 at 2018-07-24 21:25:17 +0300
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M9MT0eL+GyQNiB+7QrPxsiZdsVhLEQZaS+XDe8vEEVdTIXGAPQXYTtUQbHXVTBlq2u3zeg7nBwLYed+L5Gs9vA==", "user"=>{"email"=>"r@mail.ru"}, "commit"=>"Send me reset password instructions"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "r@mail.ru"], ["LIMIT", 1]]
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering /usr/share/gems/gems/devise-4.4.3/app/views/devise/passwords/new.html.erb within layouts/application
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/passwords/new.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+Completed 200 OK in 66ms (Views: 60.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-24 21:25:33 +0300
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:13
+  Rendered records/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+Completed 200 OK in 58ms (Views: 56.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/records/1" for 127.0.0.1 at 2018-07-24 21:25:35 +0300
+Processing by RecordsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:71
+  Rendering records/show.html.erb within layouts/application
+  Rendered records/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+Completed 200 OK in 58ms (Views: 56.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-07-24 21:25:38 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /usr/share/gems/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+Completed 200 OK in 68ms (Views: 67.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-07-24 21:26:40 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering /usr/share/gems/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (2.8ms)
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+Completed 200 OK in 62ms (Views: 61.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-07-24 21:26:51 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HKD4ggjp/UuN/dEP+jUYhRJJBN28TtfZ44IAeQQSPQzTtw6tPs7TTHM9gkMCm9SML546itkG1j5/dvB8LxqiKQ==", "user"=>{"email"=>"r@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "r@mail.ru"], ["LIMIT", 1]]
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 3ms (ActiveRecord: 1.6ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HKD4ggjp/UuN/dEP+jUYhRJJBN28TtfZ44IAeQQSPQzTtw6tPs7TTHM9gkMCm9SML546itkG1j5/dvB8LxqiKQ==", "user"=>{"email"=>"r@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /usr/share/gems/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (2.8ms)
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+Completed 200 OK in 284ms (Views: 64.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-07-24 21:26:59 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /usr/share/gems/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (0.6ms)
+  Rendered /usr/share/gems/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+Completed 200 OK in 61ms (Views: 59.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-07-24 21:27:11 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oPhmqCBhA+IJGO1BIWNlzWoD4oxM99J9u0n0Xw9b17Dw+hD1k3mbzhe4JzCrPqp+WeNswiTDQb1NEcRk32xXAQ==", "user"=>{"email"=>"r@mail.ru", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@mail.ru"], ["LIMIT", 1]]
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "r@mail.ru"], ["encrypted_password", "$2a$11$ZUtxqyHKP8mDrUXY/ZGvpevvdY14a1xqsbUywH5gVaQAw1yjW6hOC"], ["created_at", "2018-07-24 18:27:11.649112"], ["updated_at", "2018-07-24 18:27:11.649112"]]
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-07-24 18:27:11.657959"], ["last_sign_in_at", "2018-07-24 18:27:11.657959"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2018-07-24 18:27:11.658427"], ["id", 2]]
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 245ms (ActiveRecord: 14.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-24 21:27:11 +0300
+Processing by RecordsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:8
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:13
+  Rendered records/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 62ms (Views: 59.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/records/1/edit" for 127.0.0.1 at 2018-07-24 21:27:17 +0300
+Processing by RecordsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:71
+  Rendering records/edit.html.erb within layouts/application
+  Rendered records/_form.html.erb (6.8ms)
+  Rendered records/edit.html.erb within layouts/application (7.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navigation.html.erb:11
+  Rendered layouts/_navigation.html.erb (3.8ms)
+Completed 200 OK in 70ms (Views: 57.6ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/records/1" for 127.0.0.1 at 2018-07-24 21:27:30 +0300
+Processing by RecordsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g5cGLG7l+xt2W3NoZr7gTj91qQx+WSG3pRokBiKy7SViBsRFJe98dPl61d+xsEIyu0DmaTREkoNT5WbGhOU8vA==", "record"=>{"Customer"=>"Jury Ivanov", "Phone"=>"79516673452", "Time(1i)"=>"2018", "Time(2i)"=>"7", "Time(3i)"=>"24", "Time(4i)"=>"18", "Time(5i)"=>"22", "Description"=>"Was wondering about discount"}, "commit"=>"Update Record", "id"=>"1"}
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:71
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:48
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:48
+  [1m[36mRecord Update (4.4ms)[0m  [1m[33mUPDATE "records" SET "Phone" = ?, "updated_at" = ? WHERE "records"."id" = ?[0m  [["Phone", 79516673452], ["updated_at", "2018-07-24 18:27:30.958858"], ["id", 1]]
+  ↳ app/controllers/records_controller.rb:48
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:48
+Redirected to http://localhost:3000/records/1
+Completed 302 Found in 70ms (ActiveRecord: 10.5ms)
+
+
+Started GET "/records/1" for 127.0.0.1 at 2018-07-24 21:27:30 +0300
+Processing by RecordsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:71
+  Rendering records/show.html.erb within layouts/application
+  Rendered records/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navigation.html.erb:11
+  Rendered layouts/_navigation.html.erb (4.5ms)
+Completed 200 OK in 63ms (Views: 61.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-24 21:27:35 +0300
+Processing by RecordsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:8
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:13
+  Rendered records/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+Completed 200 OK in 61ms (Views: 58.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/records/1" for 127.0.0.1 at 2018-07-24 21:27:39 +0300
+Processing by RecordsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:71
+  Rendering records/show.html.erb within layouts/application
+  Rendered records/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navigation.html.erb:11
+  Rendered layouts/_navigation.html.erb (4.4ms)
+Completed 200 OK in 59ms (Views: 57.7ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-07-24 21:27:51 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"o5TYXivIB4fDdkLhpK1BbxxiVdYOR9IeWugVsmXBGwAINSdDPhnk/VdMo7f2k8Op+CXvoNxe9xm+AhJif8gCcA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/gems/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-24 21:27:51 +0300
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:13
+  Rendered records/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+Completed 200 OK in 55ms (Views: 54.0ms | ActiveRecord: 0.2ms)
+
+
